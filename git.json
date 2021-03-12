@@ -17,7 +17,6 @@
                 "zh_CN": "状态"
             },
             "icon": "status.svg",
-            "shortcut": "Alt+G, Alt+S",
             "command": "git status"
         },
         {
@@ -26,7 +25,6 @@
                 "zh_CN": "提交"
             },
             "icon": "commit.svg",
-            "shortcut": "Alt+G, Alt+C",
             "command": "git add -A -- . ; if ($?) { git commit --message=\"${input:msg}\" }",
             "inputs": [
                 {
@@ -48,7 +46,6 @@
                 "en_US": "Push",
                 "zh_CN": "上传"
             },
-            "shortcut": "Alt+G, Alt+U",
             "icon": "push.svg",
             "command": "git push"
         },
@@ -57,7 +54,6 @@
                 "en_US": "Pull",
                 "zh_CN": "下载"
             },
-            "shortcut": "Alt+G, Alt+D",
             "icon": "pull.svg",
             "command": "git pull --no-rebase"
         },
@@ -67,7 +63,6 @@
                 "zh_CN": "日志"
             },
             "icon": "history.svg",
-            "shortcut": "Alt+G, Alt+L",
             "command": "git log -10 --graph --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit"
         }
     ]
