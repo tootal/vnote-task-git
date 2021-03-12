@@ -25,7 +25,10 @@
                 "zh_CN": "提交"
             },
             "icon": "commit.svg",
-            "command": "git add -A -- . ; if ($?) { git commit --message=\"${input:msg}\" }",
+            "windows" :{
+                "command": "git add -A -- . ; if ($?) { git commit --message=\"${input:msg}\" }"
+            },
+            "command": "git add -A -- . && git commit --message=\"${input:msg}\"",
             "inputs": [
                 {
                     "id": "msg",
