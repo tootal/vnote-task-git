@@ -1,0 +1,74 @@
+{
+    "version": "0.1.4",
+    "label": "Git",
+    "icon": "git.svg",
+    "tasks": [
+        {
+            "label": {
+                "en_US": "Initialize",
+                "zh_CN": "初始化"
+            },
+            "icon": "initialization.svg",
+            "command": "git init -b main"
+        },
+        {
+            "label": {
+                "en_US": "Status",
+                "zh_CN": "状态"
+            },
+            "icon": "status.svg",
+            "shortcut": "Alt+G, Alt+S",
+            "command": "git status"
+        },
+        {
+            "label": {
+                "en_US": "Commit",
+                "zh_CN": "提交"
+            },
+            "icon": "commit.svg",
+            "shortcut": "Alt+G, Alt+C",
+            "command": "git add -A -- . ; if ($?) { git commit --message=\"${input:msg}\" }",
+            "inputs": [
+                {
+                    "id": "msg",
+                    "type": "promptString",
+                    "description": {
+                        "en_US": "Please provide a commit message",
+                        "zh_CN": "请输入提交信息"
+                    },
+                    "default": {
+                        "en_US": "Update note on ${magic:datetime}",
+                        "zh_CN": "更新笔记于 ${magic:datetime}"
+                    }
+                }
+            ]
+        },
+        {
+            "label": {
+                "en_US": "Push",
+                "zh_CN": "上传"
+            },
+            "shortcut": "Alt+G, Alt+U",
+            "icon": "push.svg",
+            "command": "git push"
+        },
+        {
+            "label": {
+                "en_US": "Pull",
+                "zh_CN": "下载"
+            },
+            "shortcut": "Alt+G, Alt+D",
+            "icon": "pull.svg",
+            "command": "git pull --no-rebase"
+        },
+        {
+            "label": {
+                "en_US": "Log",
+                "zh_CN": "日志"
+            },
+            "icon": "history.svg",
+            "shortcut": "Alt+G, Alt+L",
+            "command": "git log -10 --graph --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit"
+        }
+    ]
+}
